@@ -15,9 +15,9 @@ import { BsFillPeopleFill } from "react-icons/bs";
 function App() {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-
+  
   const showSidebarText = () => {
-    setIsSidebarOpen(true)
+      setIsSidebarOpen(true)
   }
 
   const hideSidebarText = () =>{
@@ -25,39 +25,44 @@ function App() {
   }
 
   return (
-    <div className="App bg-gray-200">
+    <div className="App bg-zinc-500">
       <div className='dashboardContainer'>
-        <div className='bg-red-500 sidebar' onMouseOver={showSidebarText} onMouseLeave={hideSidebarText}>
+        <div className={`sidebar ${isSidebarOpen ? 'w-[170px]':null } `} onMouseOver={showSidebarText} onMouseLeave={hideSidebarText}>
           <ul>
             <li className='sidebarBtns'>
-              <FaHouse className='flex justify-center items-center' />
-              {isSidebarOpen ? <p>Dashboard</p> : null}
+              <FaHouse className='mr-1 text-white' />
+              <p className='hidden lg:block'>Dashboard</p>
+              {isSidebarOpen ? <p className='lg:hidden'>Dashboard</p> : null}
 
             </li>
             <li className='sidebarBtns'>
-              <IoIosWallet />
-              {isSidebarOpen ? <p>My Wallet</p> : null}
+              <IoIosWallet className='mr-1'/>
+              <p className='hidden lg:block'>My Wallet</p>
+              {isSidebarOpen ? <p className='lg:hidden'>My Wallet</p> : null}
 
             </li>
             <li className='sidebarBtns'>
-              <TbArrowsExchange />
-              {isSidebarOpen ? <p>Transactions</p> : null}
+              <TbArrowsExchange className='mr-1'/>
+              <p className='hidden lg:block'>Transactions</p>
+              {isSidebarOpen ? <p className='lg:hidden'>Transactions</p> : null}
 
             </li>
             <li className='sidebarBtns'>
-              <MdQueryStats />
-              {isSidebarOpen ? <p>Statistics</p> : null}
+              <MdQueryStats className='mr-1'/>
+              <p className='hidden lg:block'>Statistics</p>
+              {isSidebarOpen ? <p className='lg:hidden'>Statistics</p> : null}
 
             </li>
             <li className='sidebarBtns'>
-              <FaChartBar />
-
-              {isSidebarOpen ? <p>Analytics</p> : null}
+              <FaChartBar className='mr-1'/>
+              <p className='hidden lg:block'>Analytics</p>
+              {isSidebarOpen ? <p className='lg:hidden'>Analytics</p> : null}
 
             </li>
             <li className='sidebarBtns'>
-              <BsFillPeopleFill />
-              {isSidebarOpen ? <p>Support</p> : null}
+              <BsFillPeopleFill className='mr-1'/>
+              <p className='hidden lg:block'>Support</p>
+              {isSidebarOpen ? <p className='lg:hidden'>Support</p> : null}
 
             </li>
           </ul>

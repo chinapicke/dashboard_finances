@@ -1,10 +1,11 @@
 .App{
   height: 100vh;
+
 }
 
 .dashboardContainer{
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 100px 5fr;
   padding:10px;
   height:100vh;
 }
@@ -16,12 +17,15 @@
   justify-content: center;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  transition:width 1s ease-in-out;
+  background-color: #302c2c;
+  border-right:#d6d3d1 1px solid
 }
 
 .sidebar ul{
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 50vh;
   justify-content: space-between;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -31,4 +35,28 @@
   align-items: center;
   display:flex;
   flex-direction: row;
+  color:#F9F9F9;
+  font-weight: 600;
+} 
+
+.dashboardContent{
+  background-color: #302c2c;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (min-width:768px){
+  .dashboardContainer{
+    display: grid;
+    grid-template-columns: 170px 1fr;
+  }
+  /* .sidebar{
+width:10vw;
+  }
+
+  .dashboardContent{
+    width:60vw;
+  } */
+
+
 }
